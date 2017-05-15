@@ -60,3 +60,12 @@ mean(combinepy[combinepy["pythoncountoftags"] ==4])
 #83
 mean(combinepy[combinepy["pythoncountoftags"] ==5])
 #88
+
+#investigating user id:
+ruserid = table(rNoAnswer["owner_user_id"])
+topruser = sort(ruserid, decreasing = TRUE)[1:5]
+names(topruser)[1]
+#compare with tags
+na.omit(rNoAnswer["tags"][rNoAnswer["owner_user_id"] == names(topruser)[1]])
+#compare with scores
+na.omit(rNoAnswer["score"][rNoAnswer["owner_user_id"] == names(topruser)[1]])
