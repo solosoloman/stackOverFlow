@@ -40,3 +40,23 @@ mean(combine[combine["rcountoftags"] ==4])
 #88
 mean(combine[combine["rcountoftags"] ==5])
 #91
+
+#people views post more when there are more tags
+
+#for python
+pythontags = pythonNoAnswer['tags']
+pythontags = as.character(unlist(pythontags))
+sepython = lapply(pythontags, function(x) strsplit(x,"\\|"))
+pythoncountoftags = sapply(sepython, function(x)length(unlist(x)))
+pythonviews = pythonNoAnswer['view_count']
+combinepy = cbind(pythonviews,pythoncountoftags)
+mean(combinepy[combinepy["pythoncountoftags"] ==1])
+#39
+mean(combinepy[combinepy["pythoncountoftags"] ==2])
+#63
+mean(combinepy[combinepy["pythoncountoftags"] ==3])
+#77
+mean(combinepy[combinepy["pythoncountoftags"] ==4])
+#83
+mean(combinepy[combinepy["pythoncountoftags"] ==5])
+#88
