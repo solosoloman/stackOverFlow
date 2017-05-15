@@ -20,3 +20,13 @@ rtags = as.character(unlist(rtags))
 sepr = unlist(sapply(rtags, function(x) strsplit(x,"\\|")))
 ab = table(sepr)
 sort(ab, decreasing = TRUE)[1:5]
+
+
+#checking correlation between number of tags and views(in progress)
+rtags = rNoAnswer['tags']
+rtags = as.character(unlist(rtags))
+sepr = lapply(rtags, function(x) strsplit(x,"\\|"))
+rcountoftags = lapply(sepr, function(x)length(unlist(x)))
+rviews = rNoAnswer['view_count']
+
+plot(rcountoftags),unlist(rviews))
