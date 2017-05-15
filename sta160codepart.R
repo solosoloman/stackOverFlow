@@ -29,4 +29,14 @@ sepr = lapply(rtags, function(x) strsplit(x,"\\|"))
 rcountoftags = lapply(sepr, function(x)length(unlist(x)))
 rviews = rNoAnswer['view_count']
 
-plot(rcountoftags),unlist(rviews))
+combine = cbind(rviews,rcountoftags)
+mean(combine[combine["rcountoftags"] ==1])
+#62
+mean(combine[combine["rcountoftags"] ==2])
+#81
+mean(combine[combine["rcountoftags"] ==3])
+#78
+mean(combine[combine["rcountoftags"] ==4])
+#88
+mean(combine[combine["rcountoftags"] ==5])
+#91
