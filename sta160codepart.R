@@ -6,7 +6,10 @@ rNoAnswer <- read.csv("E:/sta160/
 
 pythontags = pythonNoAnswer['tags']
 pythontags = as.character(unlist(pythontags))
+
+#separate all the tag
 sepython = unlist(sapply(pythontags, function(x) strsplit(x,"\\|")))
+#calculate the total of each tags
 bc = table(sepython)
 sort(bc, decreasing = TRUE)[1:5]
 
